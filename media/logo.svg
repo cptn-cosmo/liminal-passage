@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#3a2470"/>
+      <stop offset="0.6" stop-color="#1d1240"/>
+      <stop offset="1" stop-color="#0b0718"/>
+    </radialGradient>
+    <linearGradient id="door" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff7e0"/>
+      <stop offset="0.45" stop-color="#e9d2ff"/>
+      <stop offset="1" stop-color="#9a6bff"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#c9a6ff" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#c9a6ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e9d2ff" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#9a6bff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8f7bb8"/>
+      <stop offset="1" stop-color="#4b3a78"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+
+  <rect width="400" height="400" rx="64" fill="url(#bg)"/>
+
+  <!-- stars -->
+  <g fill="#e9d2ff">
+    <circle cx="70" cy="80" r="2.2"/><circle cx="330" cy="70" r="2.6"/><circle cx="310" cy="140" r="1.6"/>
+    <circle cx="95" cy="150" r="1.4"/><circle cx="55" cy="230" r="1.8"/><circle cx="350" cy="235" r="1.5"/>
+    <path d="M330 110 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4z" opacity="0.9"/>
+    <path d="M78 110 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3z" opacity="0.8"/>
+  </g>
+
+  <!-- halo -->
+  <ellipse cx="200" cy="200" rx="150" ry="160" fill="url(#halo)"/>
+
+  <!-- light spilling onto the floor -->
+  <path d="M150 318 L250 318 L320 372 L80 372 Z" fill="url(#floor)" opacity="0.7"/>
+
+  <!-- stone arch frame -->
+  <path d="M120 320 V170 A80 80 0 0 1 280 170 V320 H252 V172 A52 52 0 0 0 148 172 V320 Z" fill="url(#stone)" stroke="#2a1d4d" stroke-width="4" stroke-linejoin="round"/>
+  <!-- keystone -->
+  <path d="M188 86 L212 86 L208 112 L192 112 Z" fill="#b9a6e6" stroke="#2a1d4d" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- glowing doorway -->
+  <path d="M148 320 V172 A52 52 0 0 1 252 172 V320 Z" fill="url(#door)" filter="url(#blur)" opacity="0.8"/>
+  <path d="M148 320 V172 A52 52 0 0 1 252 172 V320 Z" fill="url(#door)"/>
+
+  <!-- traveler silhouette stepping through -->
+  <g fill="#2a1d4d">
+    <circle cx="200" cy="232" r="11"/>
+    <path d="M186 250 Q200 242 214 250 L220 300 L209 300 L204 276 L196 276 L191 300 L180 300 Z"/>
+  </g>
+
+  <!-- threshold step -->
+  <rect x="108" y="316" width="184" height="14" rx="4" fill="#6d5aa0" stroke="#2a1d4d" stroke-width="3"/>
+</svg>

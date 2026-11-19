@@ -1,5 +1,7 @@
 # Liminal Passage
 
+<img src="media/logo.png" alt="Liminal Passage logo" width="128">
+
 A WoW Forever addon (Interface 16001). It finds other Liminal Passage users who are resting at your destination. It then groups you with one of them automatically and uses a **Scroll of Liminal Passage** on them.
 
 ## Install
