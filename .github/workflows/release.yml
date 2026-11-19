@@ -1,0 +1,43 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Lua
+        run: sudo apt-get update && sudo apt-get install -y lua5.1 libxml2-utils
+
+      - name: Syntax check
+        run: |
+          for f in LiminalPassage/*.lua; do luac5.1 -p "$f"; done
+          for f in LiminalPassage/*.xml; do xmllint --noout "$f"; done
+
+      - name: Stamp version from tag
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+          sed -i "s/^## Version:.*/## Version: $VERSION/" LiminalPassage/LiminalPassage.toc
+          grep '^## Version' LiminalPassage/LiminalPassage.toc
+
+      - name: Package
+        run: |
+          cp README.md LiminalPassage/README.md
+          zip -r "LiminalPassage-${VERSION}.zip" LiminalPassage
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" "LiminalPassage-${VERSION}.zip" \
+            --title "Liminal Passage $VERSION" \
+            --generate-notes

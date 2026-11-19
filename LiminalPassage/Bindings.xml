@@ -1,0 +1,6 @@
+<Bindings>
+    <Binding name="LIMINALPASSAGE_TOGGLE" header="LIMINALPASSAGE" category="ADDONS">
+        LiminalPassage:ToggleUI()
+    </Binding>
+    <Binding name="CLICK LiminalPassageUseButton:LeftButton" category="ADDONS"/>
+</Bindings>

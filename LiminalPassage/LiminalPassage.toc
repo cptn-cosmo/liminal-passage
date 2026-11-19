@@ -1,0 +1,16 @@
+## Interface: 16001
+## Title: Liminal Passage
+## Notes: Find other Liminal Passage users resting at your destination, auto-group with them and teleport there with a Scroll of Liminal Passage.
+## Version: 1.0.0
+## SavedVariables: LiminalPassageDB
+## IconTexture: Interface\Icons\INV_Scroll_05
+## AddonCompartmentFunc: LiminalPassage_OnAddonCompartmentClick
+## AddonCompartmentFuncOnEnter: LiminalPassage_OnAddonCompartmentEnter
+## AddonCompartmentFuncOnLeave: LiminalPassage_OnAddonCompartmentLeave
+
+Core.lua
+Comm.lua
+Party.lua
+UI.lua
+Map.lua
+MapPin.xml
