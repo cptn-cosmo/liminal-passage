@@ -140,7 +140,7 @@ function ns:FindScroll()
         for slot = 1, C_Container.GetContainerNumSlots(bag) do
             local info = C_Container.GetContainerItemInfo(bag, slot)
             if info and info.itemID then
-                local name = info.itemName or C_Item.GetItemNameByID(info.itemID)
+                local name = C_Item.GetItemNameByID(info.itemID)
                 if name == ns.ITEM_NAME then
                     self.db.itemID = info.itemID
                     return info.itemID, C_Item.GetItemCount(info.itemID)
